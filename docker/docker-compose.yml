@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  db:
+    container_name: ordering_db
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ordering
+    ports:
+      - '5432:5432'
+    volumes:
+      - E:\backups\ordering:/backups
+      - ordering_data:/var/lib/postgresql/data
+
+volumes:
+  eior_data:
